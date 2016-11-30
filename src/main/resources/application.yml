@@ -1,0 +1,9 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: hashMapServiceBroker
+security:
+  user:
+    name: wuxiaoxin730@sina.com
+    password: 123456
