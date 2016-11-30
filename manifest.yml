@@ -1,0 +1,4 @@
+applications:
+- name: hashMap-service-broker
+  instances: 1
+  path: target/hashMapServiceBroker-1.0-SNAPSHOT.jar
