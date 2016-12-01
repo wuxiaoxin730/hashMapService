@@ -1,4 +1,7 @@
 applications:
-- name: hashMap-service-broker
+- name: hashmap-service-broker2
   instances: 1
   path: target/hashMapServiceBroker-1.0-SNAPSHOT.jar
+  env:
+    SECURITY_USER_NAME: admin
+    SECURITY_USER_PASSWORD: admin

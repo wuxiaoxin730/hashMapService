@@ -21,7 +21,7 @@ public class HashMapServiceInstanceBindingService implements ServiceInstanceBind
     @Override
     public CreateServiceInstanceBindingResponse createServiceInstanceBinding(CreateServiceInstanceBindingRequest createServiceInstanceBindingRequest) {
         logger.debug("Method enter into method createServiceInstanceBinding()...");
-        Map<String, Object> credentials = Collections.singletonMap("hashMap", customHashMapService.getInstance());
+        Map<String, Object> credentials = Collections.singletonMap("hashMap", customHashMapService);
         return null;
     }
 

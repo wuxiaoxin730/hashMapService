@@ -16,7 +16,13 @@ public class HashMapCatalogService implements CatalogService {
     @Override
     public Catalog getCatalog() {
         logger.debug("Enter in method getCatalog()...");
-        return new Catalog(Collections.singletonList(new ServiceDefinition(
+        return new Catalog(Collections.singletonList(getServiceDefinition("")));
+    }
+
+    @Override
+    public ServiceDefinition getServiceDefinition(String s) {
+        logger.debug("The parameter s is :" + s);
+        return new ServiceDefinition(
                 "hashMap-service-broker",
                 "myHashMapService",
                 "A simple hashMap service broker implementation",
@@ -24,19 +30,13 @@ public class HashMapCatalogService implements CatalogService {
                 false,
                 Collections.singletonList(new Plan(
                         "hashmap-plan",
-                        "default",
+                        "free",
                         "A default hashMap plan",
                         getPlanMetadata())),
                 Arrays.asList("Hash Map", "Cloud Storage"),
                 getServiceDefinitionMetadata(),
                 null,
-                null)));
-    }
-
-    @Override
-    public ServiceDefinition getServiceDefinition(String s) {
-        logger.debug("The parameter s is :" + s);
-        return new ServiceDefinition();
+                null);
     }
 
     private Map<String, Object> getServiceDefinitionMetadata() {
@@ -63,7 +63,7 @@ public class HashMapCatalogService implements CatalogService {
         Map<String,Object> costsMap = new HashMap<>();
 
         Map<String,Object> amount = new HashMap<>();
-        amount.put("CNY", 0.0);
+        amount.put("usd", 0.0);
 
         costsMap.put("amount", amount);
         costsMap.put("unit", "MONTHLY");
